@@ -9,13 +9,16 @@ if (yesOrNo() == false) {
 }
 
 Console.WriteLine("Okej... men jag har fortfarande inget kul att säga... vill du ha ett virus istället?");
+bool hasVirus = false;
 if (yesOrNo()) {
+    hasVirus = true;
     // try {
     //     System.Diagnostics.Process.Start(@"C:\Program Files\Google\Chrome\Application\crome.exe", "https://youtu.be/dQw4w9WgXcQ");
     // }
     // catch (System.ComponentModel.Win32Exception) {
-    Console.WriteLine("Darn it jag kunde inte hitta din webbläsare... Vart har du gömt den? >:((");
-    Console.WriteLine("Om jag bara kunde...");
+    // Console.WriteLine("Darn it jag kunde inte hitta din webbläsare... Vart har du gömt den? >:((");
+    // Console.WriteLine("Om jag bara kunde...");
+    Console.WriteLine("Okej, vänta lite...");
     for (int i = 0; i <= 100; i++) {
         System.IO.File.Copy("rick-astley.jpg", Environment.GetFolderPath(Environment.SpecialFolder.Desktop)+"/"+"Rick"+i+".jpg");
     }
@@ -56,7 +59,21 @@ if (yesOrNo()) {
             Console.WriteLine("Vi kör igen.");
         }
     }
+} else {
+    if (hasVirus) {
+        Console.WriteLine($"Varför är du så tråkig? Du vill varken ha virus ELLER köra sten sax påse :(");
+    } else {
+        Console.WriteLine("Nehe varför är du så tråkig?");
+    }
+    Console.WriteLine("Har inte några fler ideér då eftersom du är så tråkig...");
+    System.Threading.Thread.Sleep(2000);
+    System.Environment.Exit(0);
 }
+
+Console.WriteLine("Måste ta en promenad med min guldfisk nu, vi ses!");
+System.Threading.Thread.Sleep(2000);
+System.Environment.Exit(0);
+
 
 bool yesOrNo() {
     if (yesWords.Contains(Console.ReadLine().ToLower())) {
