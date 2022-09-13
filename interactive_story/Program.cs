@@ -4,6 +4,7 @@
 Console.WriteLine("Jag har ingen aning vad jag ska skriva här, vill du spela ändå?");
 if (yesOrNo() == false) {
     Console.WriteLine("Jag som hade en så bra berättelse... aja hejdå :(");
+    System.Threading.Thread.Sleep(2000);
     System.Environment.Exit(0);
 }
 
@@ -27,11 +28,34 @@ else {
     Console.WriteLine("Nehe hur tråkig får man vara? Alla vill ha virus! Vad är meningen med att inte ha ett virus på sin dator?");
 }
 Console.WriteLine("Nåja... vill du göra något annat istället?");
-System.Threading.Thread.Sleep(300);
+System.Threading.Thread.Sleep(1000);
 
 Console.WriteLine("Vad sägs om att köra sten-sax-påse?");
 if (yesOrNo()) {
-    Console.WriteLine("JAAA");    
+    bool playStenSaxPase = true;
+    while (playStenSaxPase) {
+        string[] stenSaxPase = {"Sten", "Sax", "Påse"};
+
+        for (int i = 0; i < stenSaxPase.Length; i++) {
+            System.Threading.Thread.Sleep(500);
+            Console.WriteLine(stenSaxPase[i]);
+        }
+        Console.WriteLine("*tar upp en knytnäve*");
+        System.Threading.Thread.Sleep(700);
+        Console.WriteLine("Vann jag?");
+        if (yesOrNo()) {
+            Console.WriteLine("YES LESs GOOOO");
+            System.Threading.Thread.Sleep(500);
+            Console.WriteLine("Vill du köra igen?");
+            if (!yesOrNo()) { playStenSaxPase = false; }
+        } else {
+            Console.WriteLine("FAN");
+            System.Threading.Thread.Sleep(500);
+            Console.WriteLine("Jag ska hemsöka dig");
+            System.Threading.Thread.Sleep(700);
+            Console.WriteLine("Vi kör igen.");
+        }
+    }
 }
 
 bool yesOrNo() {
